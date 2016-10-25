@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("/interfaces").then(function(res) {
+        res.json().then(function(data) {
+          var ifs = document.getElementById("interfaces");
+          for(var iface in data) {
+            (function(iface) {
+              var el = document.createElement("div");
+              var head = document.createElement("div");
+              var content = document.createElement("div");
+              el.classList.add("interface");
+              content.classList.add("collapsed");
+              head.classList.add("head");
+              head.addEventListener("click", function() {
+                content.classList.toggle("collapsed");
+              })
+              content.classList.add("content");
+              for(var conn of data[iface]) {
+                (function(conn) {
+                  var connel = document.createElement("div");
+                  connel.innerHTML = conn.address;
+                  connel.classList.add("connection");
+                  connel.addEventListener("click", function() {
+                    var url = "/build/" + conn.address;
+                    var a = document.createElement("a");
+                    a.href = url;
+                    a.click();
+                  });
+                  content.appendChild(connel);
+                })(conn);
+              }
+              head.innerHTML = iface;
+              el.appendChild(head);
+              el.appendChild(content);
+              ifs.appendChild(el);
+            })(iface);
+          }
+        })
+      })
+    });
+  </script>
+  <style>
+    body, html {
+      background-color: #031634;
+      margin: 0;
+    }
+    #wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      background-color: #033649;
+      padding: 1em;
+      max-height: 75%;
+      max-width: 60%;
+    }
+    .head {
+      text-align: center;
+      padding: 0.5em;
+      background-color: #036564;
+      cursor: pointer;
+    }
+    #prompt {
+      text-align: center;
+    }
+    .connection {
+      padding: 4px;
+      margin: 2px;
+      background-color: #9de0ad;
+      cursor: pointer;
+    }
+
+    .content {
+      text-align: center;
+      max-height: 1000px;
+      overflow: hidden;
+    }
+    .interface {
+      margin: 8px;
+    }
+    .collapsed {
+      max-height: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="prompt">
+      Please Select the network interface of the server!
+    </div>
+    <div id="interfaces">
+      
+    </div>
+  </div>
+</body>
+</html>
