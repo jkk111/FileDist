@@ -1,0 +1,41 @@
+<dom-module id="transfer-list">
+<style>
+
+</style>
+<template>
+  <div>
+    <template is="dom-repeat" items="{{employees}}">
+      {{item.path}}
+    </template>
+  </div>
+</template>
+<script>
+  Polymer({
+    is: "transfer-list",
+    properties: {
+      downloads: {
+        type: Array,
+        value: function() { return []; },
+        observer: "test"
+      },
+      employees: {
+        type: Array,
+        value: [
+          "name",
+          "is",
+          "mic"
+        ]
+      }
+    },
+    test: function(e) {
+      console.log(e, typeof e, Array.isArray(e), e.length);
+      var a = [];
+      for(var item of e) {
+        console.log(item);
+        a.push(item);
+      }
+      this.set("employees", a);
+    }
+  })
+</script>
+</dom-module>
