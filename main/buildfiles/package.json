@@ -1,0 +1,5 @@
+{
+  "name": "Lan Sync",
+  "main": "page/index.html",
+  "node-main": "edge/edge.js"
+}
