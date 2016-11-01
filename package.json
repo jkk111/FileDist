@@ -1,0 +1,25 @@
+{
+  "name": "filedist",
+  "version": "1.0.0",
+  "description": "File Distribution Platform",
+  "main": "main/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkk111/FileDist.git"
+  },
+  "author": "jkk111",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkk111/FileDist/issues"
+  },
+  "homepage": "https://github.com/jkk111/FileDist#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "multer": "^1.2.0",
+    "request": "^2.78.0",
+    "socket.io": "^1.5.1"
+  }
+}
