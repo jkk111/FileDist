@@ -1,0 +1,11 @@
+{
+  "name": "file-dist-edge",
+  "version": "1.0.0",
+  "description": "edge node for file-dist",
+  "main": "edge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jkk111",
+  "license": "ISC"
+}
