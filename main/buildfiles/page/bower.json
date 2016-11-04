@@ -1,0 +1,21 @@
+{
+  "name": "page",
+  "homepage": "https://github.com/jkk111/FileDist",
+  "authors": [
+    "John Kelly <kellyj58@tcd.ie>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-elements": "polymerelements/iron-elements#^1.0.10",
+    "paper-elements": "polymerelements/paper-elements#^1.0.7"
+  }
+}
