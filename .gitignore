@@ -84,3 +84,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 main/buildfiles/page/bower_components
+main/buildfiles/config.json
